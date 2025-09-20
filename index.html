@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Cmpatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Garba partner?</title>
+    <link rel="stylesheet" href="heart.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Heart animation </title>
+</head>
+  <style>
+    
+    body {
+      background: linear-gradient(to right, #729104, #7d1e04);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      color: #450303;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+     -webkit-text-fill-color: transparent; 
+     color: #fff; /* Ensures text is visible */
+     animation: glow 5s ease-out infinite;
+    /* text-shadow: 0 0 10px #d40693; */
+    }
+    @keyframes glow {
+  0% { text-shadow: 0 0 30px #d78bb5; }
+  50% { text-shadow: 0 0 2px #ff1493; }
+  100% { text-shadow: 0 0 30px #ff69b4; }
+    }
+
+    .heart {
+      font-size: 5em;
+      animation: pulse 3s infinite, blurToClear 5s ease forwards;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.5); }
+      100% { transform: scale(1); } 
+      }
+     @keyframes blurToClear {
+     0%   { filter: blur(20px); opacity: 0.2; }
+     100% { filter: blur(0px); opacity: 1; }
+     }
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ed0886;
+      color: rgb(40, 1, 1);
+      cursor: pointer;
+      margin: 20px;
+      transition: all 0.3s ease;
+      filter: drop-shadow(5px 5px 5px #888888);
+      animation: blur 4s ease;
+    
+    }
+@keyframes blur {
+    0%   { filter: blur(50px); }
+  50%  { filter: blur(20px); }
+  100% { filter: blur(0px); }
+}
+
+ .blur-effect {
+  animation: blurInOut 3s ease-in-out infinite;
+} 
+.bounce-button:hover {
+  animation: bounce 3s infinite;
+}
+    #thankyou {
+      display: none;
+      font-size: 2em;
+      margin-top: 40px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+<body> <h1>Will You Be My Garba partner?</h1>
+  <div class="heart">❤️</div>
+  <div class="button-container">
+
+  <button class="btn" id="yesBtn" onclick="sayYes()">Yes</button>
+  <button class="btn" id="noBtn" onclick="sayNo()">No</button>
+</div>
+
+  <div id="thankyou">Thankyou!!!</div>
+
+  <script>
+    let yesBtn = document.getElementById("yesBtn");
+    let size = 1.2;
+
+    function sayNo() {
+      size += 0.2;
+      yesBtn.style.transform = `scale(${size})`;
+    }
+
+    function sayYes() {
+      document.getElementById("thankyou").style.display = "block";
+      yesBtn.style.display = "none";
+    }
+  </script>
+    <script src="heart.js"></script>
+</body>
+</html>
